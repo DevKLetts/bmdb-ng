@@ -1,60 +1,57 @@
 <a routerLink="movie-list"></a>
 <div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
-      <section class="heading">
-    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
-    <span> | <a routerLink="/movie-list">Return to List</a></span>
-  </section>
-    <h4 class="text-center">New Movie</h4>
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <span> | <a routerLink="/movie-list">Return to List</a></span>
+    </section>
+    <h4 class="text-center">Edit Movie</h4>
 
     <form #newMovieForm="ngForm">
         <p *ngIf="!movie">Loading...</p>
-                <div *ngIf="movie">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Year</th>
-                                    <th>Rating</th>
-                                    <th>Director</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
+        <div *ngIf="movie">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <!-- <th>ID</th> -->
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                        <th>Director</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- <td>
                                         <input class="form-control" type="text" name="id" [(ngModel)]="movie.id"
                                             required placeholder="Enter movie id" title="Movie ID">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text" name="title"
-                                            [(ngModel)]="movie.title" required placeholder="Enter movie title"
-                                            title="Movie Title">
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="number" name="year" [(ngModel)]="movie.year"
-                                            required placeholder="Enter movie year" title="Movie Year">
-                                    </td>
-                                    <td>
-                                        <select class="form-control" type="text" name="rating"
-                                            [(ngModel)]="movie.rating" required placeholder="Select movie rating"
-                                            title="Movie Rating">
-                                            <option *ngFor="let r of ratings" [ngValue]="r">{{ r }}</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="text" name="director"
-                                            [(ngModel)]="movie.director" required placeholder="Enter movie director"
-                                            title="Movie Director">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="d-grid gap-2 col-2 mx-auto">
-                            <button type="button" class="btn btn-primary" (click)="save()"
-                                [disabled]="!newMovieForm.valid" (keyup.enter)="save()">Save</button>
-                        </div>
+                                    </td> -->
+                        <td>
+                            <input class="form-control" type="text" name="title" [(ngModel)]="movie.title" required
+                                placeholder="Enter movie title" title="Movie Title">
+                        </td>
+                        <td>
+                            <input class="form-control" type="number" name="year" [(ngModel)]="movie.year" required
+                                placeholder="Enter movie year" title="Movie Year">
+                        </td>
+                        <td>
+                            <select class="form-control" type="text" name="rating" [(ngModel)]="movie.rating" required
+                                placeholder="Select movie rating" title="Movie Rating">
+                                <option *ngFor="let r of ratings" [ngValue]="r">{{ r }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" name="director" [(ngModel)]="movie.director"
+                                required placeholder="Enter movie director" title="Movie Director">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-grid gap-2 col-2 mx-auto">
+                <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!newMovieForm.valid"
+                    (keyup.enter)="save()">Save</button>
+            </div>
 
-                </div>
+        </div>
     </form>
     <br>
 </div>

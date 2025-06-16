@@ -32,9 +32,6 @@ export class CreditList implements OnInit, OnDestroy{
   removeCredit(id: number) {
   this.credits = this.credits.filter(c => c.creditid !== id);
   }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
   ngOnInit(): void {
     // call creditsvc and populate the list of credits
     this.subscription = this.creditSvc.list().subscribe({
@@ -43,9 +40,14 @@ export class CreditList implements OnInit, OnDestroy{
         console.log("credits", this.credits);
       },
       error: (err) => {
-        console.log("Error retrieving credits list.", err);
+        console.log("Error getting list of Credits.", err);
       }
     });
-
+    
   }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+
 }

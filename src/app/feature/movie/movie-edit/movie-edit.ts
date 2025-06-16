@@ -26,9 +26,6 @@ export class MovieEdit implements OnInit, OnDestroy{
     private actRoute: ActivatedRoute
   ) { }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
   ngOnInit(): void {
     // get the id from the URL
     this.actRoute.params.subscribe((parms) => {
@@ -44,7 +41,7 @@ export class MovieEdit implements OnInit, OnDestroy{
       });
     })
   }
-
+  
   save() {
     this.subscription = this.movieSvc.update(this.movie).subscribe({
       next: (resp) => {
@@ -56,6 +53,11 @@ export class MovieEdit implements OnInit, OnDestroy{
       },
     });
   }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+  
 }
 
 

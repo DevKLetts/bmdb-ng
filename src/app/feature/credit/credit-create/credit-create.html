@@ -2,37 +2,38 @@
 <div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{ title }}</span>
-        <span> | <a routerLink="/movie-list">Return to List</a></span>
+        <span> | <a routerLink="/credit-list">Return to Credit List</a></span>
     </section>
-    <h4 class="text-center">New Movie</h4>
+
+
 
     <form #newCreditForm="ngForm">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Credit ID</th>
-                    <th>Actor ID</th>
-                    <th>Movie ID</th>
+                    <th>Movie</th>
+                    <th>Actor</th>
                     <th>Role</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <input class="form-control" type="number" name="creditid" [(ngModel)]="newCredit.creditid"
-                            required placeholder="Enter credit id" title="Credit ID">
+                        <select [(ngModel)]="newCredit.movie" class="rounded">
+                            <option *ngFor="let m of movies" [ngValue]="m">
+                                {{ m.title }}
+                            </option>
+                        </select>
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="actorid" [(ngModel)]="newCredit.actorid"
-                            required placeholder="Enter actor id" title="Actor ID">
+                        <select [(ngModel)]="newCredit.actor" class="rounded">
+                            <option *ngFor="let a of actors" [ngValue]="a">
+                                {{ a.lastName + ", " + a.firstName }}
+                            </option>
+                        </select>
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="movieid" [(ngModel)]="newCredit.movieid"
-                            required placeholder="Enter movie id" title="Movie ID">
-                    </td>
-                    <td>
-                        <input class="form-control" type="text" name="role" [(ngModel)]="newCredit.role" required
-                            placeholder="Enter actor role" title="Role">
+                        <input [(ngModel)]="newCredit.role" type="text" />
                     </td>
                 </tr>
             </tbody>

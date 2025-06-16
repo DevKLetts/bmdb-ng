@@ -1,4 +1,4 @@
-<div class="p-4">
+<div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
   <section class="heading">
     <span class="page-title font-weight-bold font-italic">{{ title }}</span>
     <a routerLink="/movie-create">
@@ -22,14 +22,14 @@
         <td>{{ m.rating }}</td>
         <td>{{ m.director }}</td>
         <td>
-          <a routerLink="/movie-edit/{{ m.id }}">
+          <!-- <a routerLink="/movie-edit/{{ m.id }}">
             <img
               src="images/pencil-icon.png"
               width="20"
               height="20"
               title="Edit Movie"
-          /></a>
-          |
+          /></a> -->
+          
           <a routerLink="/movie-detail/{{m.id}}">
             <img
               src="images/details.png"
@@ -39,17 +39,7 @@
             />
           </a>
           |
-          <a>
-            <img
-              src="images/delete.jpg"
-              width="20"
-              height="20"
-              title="Delete Movie"
-              (click)="delete(m.id)"
-            />
-          </a>
-          |
-          <a>
+          <a routerLink="">
             <img
               src="images/lines.png"
               width="20"

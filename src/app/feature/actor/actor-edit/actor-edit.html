@@ -1,1 +1,52 @@
-<p>actor-edit works!</p>
+<div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <span> | <a routerLink="/actor-list">Return to List</a></span>
+    </section>
+    <form #newActorForm="ngForm">
+        <p *ngIf="!actor">Loading...</p>
+        <div *ngIf="actor">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Birth Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input class="rounded" type="text" name="firstName" [(ngModel)]="actor.firstName"
+                                required placeholder="Enter actor first name" title="Actor First Name">
+                        </td>
+                        <td>
+                            <input class="rounded" type="text" name="lastName" [(ngModel)]="actor.lastName"
+                                required placeholder="Enter actor year" title="Actor Last Name">
+                        </td>
+                        <td>
+                            <select class="rounded" type="text" name="gender" [(ngModel)]="actor.gender" required
+                                placeholder="Select actor gender" title="Actor Gender">
+                                <option *ngFor="let g of genders" [ngValue]="g">{{ g }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="rounded" type="date" name="birthDate" [(ngModel)]="actor.birthDate"
+                                required placeholder="Enter actor Birth Date" title="Actor Birthdate">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <span>
+                <span>
+                    <a routerLink="/actor-edit/{{ actor.id }}" class="btn btn-sm btn-warning" (click)="save()" >
+                        Save
+                    </a>
+                </span>
+            </span>
+
+        </div>
+    </form>
+    <br>
+</div>

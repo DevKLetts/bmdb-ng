@@ -35,8 +35,9 @@ export class MovieCreate implements OnInit, OnDestroy {
     });
   }
 
+  ngOnInit(): void { }
+
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
   }
-  ngOnInit(): void {}
 }

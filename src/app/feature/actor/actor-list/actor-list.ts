@@ -20,8 +20,6 @@ export class ActorList implements OnInit, OnDestroy{
   newActor: Actor = new Actor();
   trackByActorId!: TrackByFunction<Actor>;
   
-  
-  
   addActor() {
     this.actors.push(this.newActor);
     this.newActor = new Actor();
@@ -31,9 +29,6 @@ export class ActorList implements OnInit, OnDestroy{
 
   removeActor(id: number) {
   this.actors = this.actors.filter(m => m.id !== id);
-  }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
   }
   ngOnInit(): void {
     // call actorsvc and populate the list of actors
@@ -46,6 +41,10 @@ export class ActorList implements OnInit, OnDestroy{
         console.log("Error retrieving actors list.", err);
       }
     });
-
   }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+
 }

@@ -40,11 +40,7 @@ export class MovieDetail implements OnInit, OnDestroy {
       });
     });
   }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
+  
   delete() {
     this.movieSvc.delete(this.movieId).subscribe({
       next: (resp) => {
@@ -55,4 +51,9 @@ export class MovieDetail implements OnInit, OnDestroy {
       },
     });
   }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+
 }

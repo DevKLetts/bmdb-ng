@@ -31,9 +31,6 @@ export class MovieList implements OnInit, OnDestroy{
   }
 
  
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
   ngOnInit(): void {
     // call moviesvc and populate the list of movies
     this.subscription = this.movieSvc.list().subscribe({
@@ -61,4 +58,9 @@ export class MovieList implements OnInit, OnDestroy{
       },
     });
   }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+  
 }

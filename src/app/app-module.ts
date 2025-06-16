@@ -24,7 +24,6 @@ import { Menu } from './core/menu/menu';
     App,
     MovieList,
     ActorList,
-    CreditList,
     MovieDetail,
     MovieCreate,
     MovieEdit,
@@ -32,6 +31,7 @@ import { Menu } from './core/menu/menu';
     ActorDetail,
     ActorEdit,
     ActorCreate,
+    CreditList,
     CreditCreate,
     CreditEdit,
     Menu

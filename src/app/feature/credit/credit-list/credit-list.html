@@ -1,25 +1,32 @@
-
-<div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis">
-      <a routerLink="/movie-create"></a>
-    <h1 class="text-center">{{title}}</h1>
-<table class = "table table-striped table-hover">
-    <thead>
-    <tr>
-        <th>Credit ID</th>
-        <th>Actor ID</th>
-        <th>Movie ID</th>
-        <th>Role</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of credits; trackBy: trackByCreditId">
-            <td>{{c.creditid}}</td>            
-            <td>{{c.actorid}}</td>
-            <td>{{c.movieid}}</td>
-            <td><button type="button" class="btn btn-primary btn-sm" (click)="removeCredit(c.creditid)">Delete</button></td>
-        </tr>
-    </tbody>
-</table>
+<div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <a routerLink="/credit-create">
+            <img width="20" height="20" src="images/add-icon.png" title="Add New" />
+        </a>
+    </section>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Movie</th>
+                <th>Actor</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of credits; trackBy: trackByCreditId">
+                <td>{{c.creditid}}</td>
+                <td>{{c.movie.title}}</td>
+                <td>{{c.actor.lastName + ", " + c.actor.firstName}}</td>
+                <td>{{c.role}}</td>
+                <td>
+                    <a routerLink="/credit-edit/{{c.creditid}}">
+                        <img src="images/edit.png" width="20" height="20" title="Credit Edit" />
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-

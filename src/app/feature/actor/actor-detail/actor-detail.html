@@ -1,1 +1,46 @@
-<p>actor-detail works!</p>
+<div *ngIf="actor" class="container-lg border border-primary p-2 mb-2 border-opacity-50">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <span> | <a routerLink="/actor-list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Birth Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>
+                    <input [(ngModel)]="actor.firstName" class="rounded" type="text" disabled />
+                </td>
+                <td>
+                    <input [(ngModel)]="actor.lastName" class="rounded" type="text" disabled />
+                </td>
+                <td>
+                    <input [(ngModel)]="actor.gender" class="rounded" type="text" disabled />
+                </td>
+                <td>
+                    <input [(ngModel)]="actor.birthDate" class="rounded" type="date" disabled />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+    <span>
+        <span>
+            <a routerLink="/actor-edit/{{ actor.id }}" class="btn btn-sm btn-warning">
+                Edit
+            </a>
+        </span>
+        <span>
+            |
+            <button (click)="delete()" class="btn btn-sm btn-danger">
+                Delete
+            </button></span>
+    </span>
+</div>

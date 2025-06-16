@@ -1,1 +1,47 @@
-<p>actor-create works!</p>
+<a routerLink="actor-list"></a>
+<div class="container-lg border border-primary p-2 mb-2 border-opacity-50">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <span> | <a routerLink="/actor-list">Return to List</a></span>
+    </section>
+
+    <form #newActorForm="ngForm">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Birth Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" name="firstName" [(ngModel)]="newActor.firstName"
+                            required placeholder="Enter actor title" title="Actor Title">
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" name="lastName" [(ngModel)]="newActor.lastName" required
+                            placeholder="Enter actor last name" title="Actor Last Name">
+                    </td>
+                    <td>
+                        <select class="form-control" type="text" name="gender" [(ngModel)]="newActor.gender" required
+                            placeholder="Enter actor gender" title="Actor Gender">
+                            <option *ngFor="let g of genders" [ngValue]="g">{{ g }}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="form-control" type="date" name="birthDate" [(ngModel)]="newActor.birthDate"
+                            required placeholder="Enter actor birthDate" title="Actor Birth Date">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <button type="button" class="btn btn-primary" (click)="addActor()" [disabled]="!newActorForm.valid"
+                (keyup.enter)="addActor()">Add</button>
+        </div>
+    </form>
+    <br>
+</div>
