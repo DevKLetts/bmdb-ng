@@ -1,0 +1,29 @@
+
+<div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis">
+    <h1 class="text-center">{{title}}</h1>
+      <a routerLink="/movie-create"></a>
+<table class = "table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Birth Date</th>
+        <th>    </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of actors; trackBy: trackByActorId">
+            <td>{{a.id}}</td>            
+            <td>{{a.firstName}}</td>
+            <td>{{a.lastName}}</td>
+            <td>{{a.gender}}</td>
+            <td>{{a.birthDate}}</td>
+            <td><button type="button" class="btn btn-primary btn-sm" (click)="removeActor(a.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br><br><br>
+
