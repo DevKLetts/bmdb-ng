@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Credit } from '../model/credit';
 
-const URL = 'http://localhost:8080/api/credit';
+const URL = 'http://lettskory-everest.nord:8080/api/credit';
 
 @Injectable({
   providedIn: 'root',

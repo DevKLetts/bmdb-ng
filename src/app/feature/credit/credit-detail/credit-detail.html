@@ -1,0 +1,36 @@
+<div *ngIf="credit" class="container-lg border border-primary p-2 mb-2 border-opacity-50">
+  <section class="heading">
+    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <span> | <a routerLink="/credit-list">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>Movie:</td>
+        <td>
+          <input [value]="credit.movie.title" class="rounded" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Actor:</td>
+        <td>
+          <input [value]="credit.actor.firstName + ' ' + credit.actor.lastName" class="rounded" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Role:</td>
+        <td>
+          <input [value]="credit.role" class="rounded" type="text" disabled />
+        </td>
+      </tr>
+    </table>
+  </main>
+  <span>
+    <span><a routerLink="/credit-edit/{{ credit.creditid }}" class="btn btn-sm btn-warning">Edit</a></span>
+    <span>
+      |
+      <button (click)="delete()" class="btn btn-sm btn-danger">
+        Delete
+      </button></span>
+  </span>
+</div>

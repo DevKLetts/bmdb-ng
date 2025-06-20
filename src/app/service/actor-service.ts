@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Actor } from '../model/actor';
 
-const URL = 'http://localhost:8080/api/actor';
+const URL = 'http://lettskory-everest.nord:8080/api/actor';
 
 @Injectable({
   providedIn: 'root',

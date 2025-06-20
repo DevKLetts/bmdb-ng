@@ -18,6 +18,7 @@ import { ActorCreate } from './feature/actor/actor-create/actor-create';
 import { CreditCreate } from './feature/credit/credit-create/credit-create';
 import { CreditEdit } from './feature/credit/credit-edit/credit-edit';
 import { Menu } from './core/menu/menu';
+import { CreditDetail } from './feature/credit/credit-detail/credit-detail';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Menu } from './core/menu/menu';
     CreditList,
     CreditCreate,
     CreditEdit,
-    Menu
+    Menu,
+    CreditDetail
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { ActorList } from './feature/actor/actor-list/actor-list';
 import { ActorCreate } from './feature/actor/actor-create/actor-create';
 import { ActorEdit } from './feature/actor/actor-edit/actor-edit';
 import { ActorDetail } from './feature/actor/actor-detail/actor-detail';
+import { CreditDetail } from './feature/credit/credit-detail/credit-detail';
 
 
 const routes: Routes = [
@@ -23,11 +24,12 @@ const routes: Routes = [
   { path: 'credit-list', component: CreditList },
   { path: 'credit-create', component: CreditCreate },
   { path: 'credit-edit/:id', component: CreditEdit },
-  //{ path: 'credit-detail/:id', component: CreditDetail },
+  { path: 'credit-detail/:id', component: CreditDetail },
   { path: 'actor-list', component: ActorList },
   { path: 'actor-create', component: ActorCreate },
   { path: 'actor-edit/:id', component: ActorEdit },
   { path: 'actor-detail/:id', component: ActorDetail },
+
 
 
   //{ path: 'home', component: HomeComponent },

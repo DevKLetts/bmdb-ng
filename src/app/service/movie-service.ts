@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Movie } from '../model/movie';
 
 
-const URL = "http://localhost:8080/api/movie";
+const URL = "http://lettskory-everest.nord:8080/api/movie";
 
 @Injectable({
   providedIn: 'root'
