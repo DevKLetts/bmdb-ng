@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MovieService } from '../../../service/movie-service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../../service/system.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -19,9 +20,11 @@ export class MovieList implements OnInit, OnDestroy{
   subscription!: Subscription;
   movies: Movie[] = [];
   trackByMovieId!: TrackByFunction<Movie>;
+  welcomeName : string = '';
   
   constructor(
     private movieSvc: MovieService,
+    private sysSvc: SystemService,
     private router: Router,
     private actRoute: ActivatedRoute
   ) { }
@@ -32,6 +35,8 @@ export class MovieList implements OnInit, OnDestroy{
 
  
   ngOnInit(): void {
+    this.welcomeName=this.sysSvc.loggedInUser.firstName;
+    
     // call moviesvc and populate the list of movies
     this.subscription = this.movieSvc.list().subscribe({
       next: (resp) => {

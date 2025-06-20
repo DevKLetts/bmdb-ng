@@ -13,6 +13,7 @@ import { ActorCreate } from './feature/actor/actor-create/actor-create';
 import { ActorEdit } from './feature/actor/actor-edit/actor-edit';
 import { ActorDetail } from './feature/actor/actor-detail/actor-detail';
 import { CreditDetail } from './feature/credit/credit-detail/credit-detail';
+import { UserLogin } from './feature/user/user-login/user-login';
 
 
 const routes: Routes = [
@@ -29,8 +30,7 @@ const routes: Routes = [
   { path: 'actor-create', component: ActorCreate },
   { path: 'actor-edit/:id', component: ActorEdit },
   { path: 'actor-detail/:id', component: ActorDetail },
-
-
+  { path: 'user-login', component: UserLogin },
 
   //{ path: 'home', component: HomeComponent },
   //{ path: 'get/:id', component: GetComponent },

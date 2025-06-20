@@ -123,9 +123,7 @@ export class CreditEdit implements OnInit, OnDestroy {
     return a && b && a.id == b.id;
   }
 
-  compActor(a: Actor, b: Actor): boolean {
-    return a && b && a.id == b.id;
-  }
+
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();

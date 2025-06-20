@@ -1,7 +1,15 @@
-export class Movie {
-  id: number = 0;
-  email: string = "";
-  firstName: number = 1900;
-  lastName: string = "";
-  password: string = "";
-}
+export class User {
+    id:number;
+    email:string;
+    password:string;
+    firstName:string;
+    lastName:string;
+
+    constructor(id:number=0,email:string ='',password:string='',firstName:string='',lastName:string='')
+{
+    this.id = id;
+    this.email=email;
+    this.password=password;
+    this.firstName=firstName;
+    this.lastName=lastName;
+}}
